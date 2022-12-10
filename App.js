@@ -1,20 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { TouchableHighlight, Button, StyleSheet, Text, View, Alert } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
-    </View>
+      <TouchableHighlight underlayColor='red' onPress={() => Alert.alert('you mighta thought')}>
+          <Text style={styles.touch}>This is a button</Text>
+      </TouchableHighlight>
+      <Button title='this too'onPress={()=> Alert.alert('sike 730 sharp boi')}></Button>
+    </View> 
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FF0',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  touch: {
+    color:'orange',
   },
 });
